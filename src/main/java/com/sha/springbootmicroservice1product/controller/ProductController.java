@@ -19,7 +19,8 @@ public class ProductController
     @Autowired
     private IProductService productService;
 
-    @PostMapping // -> api/product
+//    @PostMapping // -> api/product
+    @PostMapping(produces = "text/plain;charset=UTF-8")
     public ResponseEntity<?> saveProduct(@RequestBody Product product)
     {
         return new ResponseEntity<>(productService.saveProduct(product), HttpStatus.CREATED);
