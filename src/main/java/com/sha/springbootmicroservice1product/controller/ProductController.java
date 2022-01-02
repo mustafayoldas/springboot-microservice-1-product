@@ -20,7 +20,7 @@ public class ProductController
     private IProductService productService;
 
 //    @PostMapping // -> api/product
-    @PostMapping(produces = "text/plain;charset=UTF-8")
+    @PostMapping
     public ResponseEntity<?> saveProduct(@RequestBody Product product)
     {
         return new ResponseEntity<>(productService.saveProduct(product), HttpStatus.CREATED);
